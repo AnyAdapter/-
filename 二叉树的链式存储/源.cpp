@@ -440,9 +440,31 @@ void Order(BTree t)//层次遍历（队列实现）
 	PLinkQueue Q;
 	BTree p = t;
 	Q = Init_LinkQueue();
-	while (p != NULL || Empty_LinkQueue(Q) == 0)//队列非空或者树非空
+	if (p != NULL)
 	{
-		
+		Visit(p->data);
+		In_LinkQueue(Q,p);
+	}
+	else
+	{
+		printf("\n树为空\n");
+		return;
+	}
+	while ( Empty_LinkQueue(Q) == 0)//队列非空
+	{
+		Out_LinkQueue(Q,&p);
+		if (p->lchild != NULL)
+		{
+			p = p->lchild;
+			Visit(p->data);
+			In_LinkQueue(Q, p);
+		}
+		if (p->rchild)
+		{
+			p = p->rchild;
+			Visit(p->data);
+			In_LinkQueue(Q, p);
+		}
 	}
 }
 

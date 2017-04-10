@@ -442,7 +442,7 @@ void Order(BTree t)//层次遍历（队列实现）
 	Q = Init_LinkQueue();
 	while (p != NULL || Empty_LinkQueue(Q) == 0)//队列非空或者树非空
 	{
-
+		
 	}
 }
 

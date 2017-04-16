@@ -388,7 +388,7 @@ void PostOrder_1(BTree t)//后序遍历
 void PreOrder_2(BTree t)//先序遍历
 {
 	PLinkStack S;
-	BTree p = t;
+	Bnode * p = t;
 	S = Init_LinkStack();
 	while (p != NULL || Empty_LinkStack(S) == 0)//栈非空或者树非空
 	{

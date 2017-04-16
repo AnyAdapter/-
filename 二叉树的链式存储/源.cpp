@@ -333,6 +333,26 @@ BTree CreateBinTree()//创建二叉链表存储的二叉树
 	return t;
 }
 
+//销毁一个二叉树
+void DestroyBinTree(BTree *t)
+{
+	Bnode *p,*q,*f;
+	if ( *t ==NULL)
+	{
+		return;
+	}
+	else
+	{
+		f = *t;
+		p = (*t)->lchild;
+		q = (*t)->rchild;
+		DestroyBinTree(&p);
+		DestroyBinTree(&q);
+		free(f);
+		*t = f = NULL;
+	}
+}
+
 //遍历(递归)
 void PreOrder_1(BTree t)//先序遍历
 {

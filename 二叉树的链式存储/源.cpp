@@ -476,15 +476,13 @@ void Order(BTree t)//层次遍历（队列实现）
 		Out_LinkQueue(Q,&p);
 		if (p->lchild != NULL)
 		{
-			p = p->lchild;
-			Visit(p->data);
-			In_LinkQueue(Q, p);
+			Visit(p->lchild->data);
+			In_LinkQueue(Q, p->lchild);
 		}
-		if (p->rchild)
+		if (p->rchild !=  NULL)
 		{
-			p = p->rchild;
-			Visit(p->data);
-			In_LinkQueue(Q, p);
+			Visit(p->rchild->data);
+			In_LinkQueue(Q, p->rchild);
 		}
 	}
 }

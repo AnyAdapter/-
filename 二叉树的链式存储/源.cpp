@@ -321,7 +321,7 @@ BTree CreateBinTree()//创建二叉链表存储的二叉树
 	else
 	{
 		t = (Bnode *)malloc(sizeof(Bnode));
-		if (t != NULL)
+		if (t == NULL)
 		{
 			printf("\n内存不足\n");
 			return NULL;
